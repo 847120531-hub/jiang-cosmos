@@ -1,0 +1,510 @@
+:root {
+      --bg: #0a0e1a;
+      --panel: #12182a;
+      --border: #2a3555;
+      --text: #e8ecf4;
+      --muted: #8b95b0;
+      --accent: #6eb5ff;
+      --gold: #f0c060;
+      --purple: #b07aff;
+      --green: #5dd9a8;
+      --red: #ff7b7b;
+      --orange: #ffaa55;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 24px 48px;
+      min-width: 1100px;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+
+    .card h2 {
+      font-size: 1.05rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .tag {
+      font-size: 0.7rem;
+      background: rgba(110, 181, 255, 0.15);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: normal;
+    }
+
+    /* ── 四阶段循环 ── */
+    .cycle-wrap {
+      position: relative;
+      padding: 20px 10px 10px;
+    }
+
+    .cycle-ring {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      position: relative;
+    }
+
+    .stage {
+      width: 155px;
+      text-align: center;
+      position: relative;
+    }
+
+    .stage-box {
+      background: linear-gradient(160deg, #1a2240, #0f1528);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 10px;
+      transition: border-color 0.2s;
+    }
+
+    .stage-box:hover { border-color: var(--accent); }
+
+    .stage-num {
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stage-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .stage-desc {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .stage-gather .stage-num { color: var(--purple); }
+    .stage-release .stage-num { color: var(--accent); }
+    .stage-transform .stage-num { color: var(--green); }
+
+    .key-note {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: rgba(176, 122, 255, 0.1);
+      border: 1px solid var(--purple);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .key-note strong { color: var(--purple); }
+
+    .map-table {
+      width: 100%;
+      margin-top: 14px;
+      border-collapse: collapse;
+      font-size: 0.72rem;
+    }
+
+    .map-table th, .map-table td {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .map-table th { background: #1a2240; color: var(--muted); }
+    .map-table td { color: var(--muted); }
+    .map-table td.new { color: var(--green); font-weight: 600; }
+
+    .arrow-h {
+      font-size: 1.6rem;
+      color: var(--muted);
+      padding: 0 6px;
+      align-self: center;
+      margin-top: -10px;
+    }
+
+    .cycle-return {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .cycle-return span {
+      color: var(--purple);
+      font-weight: 600;
+    }
+
+    .now-marker {
+      display: inline-block;
+      background: rgba(93, 217, 168, 0.2);
+      color: var(--green);
+      font-size: 0.65rem;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-top: 4px;
+    }
+
+    /* ── 公理表 ── */
+    .axiom-grid {
+      display: grid;
+      grid-template-columns: 48px 90px 1fr;
+      gap: 6px 10px;
+      font-size: 0.82rem;
+    }
+
+    .axiom-grid .id {
+      color: var(--accent);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .axiom-grid .name {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .axiom-grid .desc {
+      color: var(--muted);
+    }
+
+    /* ── 黑洞链 ── */
+    .bh-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 8px 0;
+    }
+
+    .bh-step {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      position: relative;
+    }
+
+    .bh-step-inner {
+      background: #161d35;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 8px;
+      height: 100%;
+    }
+
+    .bh-step .icon {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .bh-step .title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .bh-step .sub {
+      font-size: 0.68rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .bh-arrow {
+      display: flex;
+      align-items: center;
+      color: var(--orange);
+      font-size: 1.2rem;
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+
+    .bh-note {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: rgba(255, 170, 85, 0.08);
+      border-left: 3px solid var(--orange);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .bh-note strong { color: var(--orange); }
+
+    /* ── 时间轴 ── */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--purple));
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 14px 18px;
+      font-size: 0.82rem;
+    }
+
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -17px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+
+    .tl-item.now::before {
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+
+    .tl-time {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.78rem;
+    }
+
+    .tl-event {
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── 实体关系 ── */
+    .entity-diagram {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+    }
+
+    .entity-box {
+      border-radius: 10px;
+      padding: 12px 20px;
+      text-align: center;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .entity-cosmic {
+      background: linear-gradient(135deg, rgba(176, 122, 255, 0.2), rgba(110, 181, 255, 0.1));
+      border: 2px solid var(--purple);
+    }
+
+    .entity-local {
+      background: linear-gradient(135deg, rgba(110, 181, 255, 0.15), rgba(93, 217, 168, 0.08));
+      border: 1px solid var(--accent);
+      max-width: 260px;
+    }
+
+    .entity-box .e-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .entity-box .e-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .entity-arrow {
+      color: var(--muted);
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    .entity-arrow .label {
+      display: block;
+      color: var(--orange);
+      font-size: 0.68rem;
+      margin-bottom: 2px;
+    }
+
+    /* ── 对照表 ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+
+    th, td {
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: #1a2240;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    td { color: var(--muted); }
+
+    td.highlight {
+      color: var(--green);
+      font-weight: 600;
+      background: rgba(93, 217, 168, 0.06);
+    }
+
+    th.jiang { color: var(--green); }
+
+    /* ── 方程区 ── */
+    .eq-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .eq-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px;
+      font-size: 0.78rem;
+      align-items: center;
+    }
+
+    .eq-label {
+      color: var(--gold);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .eq-formula {
+      font-family: "Cambria Math", "Times New Roman", serif;
+      color: var(--accent);
+      background: #0d1220;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .params {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .params span { color: var(--accent); }
+
+    /* ── 总图景 ── */
+    .summary {
+      background: linear-gradient(135deg, #151c32, #1a1040);
+      border: 1px solid var(--purple);
+      border-radius: 12px;
+      padding: 22px 28px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .summary blockquote {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text);
+      font-style: normal;
+    }
+
+    .summary .footer {
+      margin-top: 12px;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .dark-ages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .da-box {
+      background: #0d1220;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.75rem;
+    }
+
+    .da-box .da-title {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.78rem;
+    }
+
+    .da-box .da-desc { color: var(--muted); }
+
+    @media print {
+      body { background: white; color: #111; min-width: auto; }
+      .card { break-inside: avoid; }
+    }
