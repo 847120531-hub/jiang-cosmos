@@ -1,1 +1,70 @@
-test
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>姜氏宇宙模型</title>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/cosmos.css">
+  <style>
+    .hero { text-align: center; padding: 60px 20px 40px; }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 12px; }
+    .hero p { color: var(--muted); max-width: 560px; margin: 0 auto 28px; line-height: 1.6; }
+    .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 500; }
+    .btn-primary { background: var(--gold, #c9a227); color: #111; }
+    .btn-secondary { border: 1px solid var(--border, #444); color: var(--text); }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; max-width: 700px; margin: 40px auto; }
+    .stat { background: var(--card, #1a1a1a); border: 1px solid var(--border, #333); border-radius: 8px; padding: 16px; text-align: center; }
+    .stat .num { font-size: 1.4rem; font-weight: 600; color: var(--gold, #c9a227); }
+    .stat .label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+    .note { max-width: 640px; margin: 30px auto; font-size: 0.85rem; color: var(--muted); text-align: center; line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="logo">姜氏宇宙</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">首页</a>
+    <a href="model.html">总览图</a>
+    <a href="numeric.html">数值基准 v4.7</a>
+    <a href="docs.html">完整记录</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>姜氏宇宙模型</h1>
+  <p>聚集 · 释放 · 转化<br>三形态循环宇宙观 + 三标量场暗能量数值实现</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="model.html">哲学总览图</a>
+    <a class="btn btn-secondary" href="numeric.html">数值基准 v4.7</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <div class="num">13.81</div>
+    <div class="label">宇宙年龄 (Gyr)</div>
+  </div>
+  <div class="stat">
+    <div class="num">67.4</div>
+    <div class="label">H₀ (km/s/Mpc)</div>
+  </div>
+  <div class="stat">
+    <div class="num">≈ −0.999</div>
+    <div class="label">w_DE (z=0)</div>
+  </div>
+  <div class="stat">
+    <div class="num">0.983</div>
+    <div class="label">min g_xx > 0</div>
+  </div>
+</div>
+
+<p class="note">
+  当前数值基准下，场几乎冻结，有效行为接近宇宙学常数。<br>
+  这是已验证的事实。模型仍可继续探索更强动力学参数。
+</p>
+
+<footer class="site-footer">姜氏宇宙模型 · 最后更新 2026-07-26 · 个人研究，非同行评审</footer>
+</body>
+</html>
