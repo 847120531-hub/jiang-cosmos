@@ -3,44 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>姜氏宇宙模型</title>
+  <title>MVM v4.7 · 姜氏宇宙</title>
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/cosmos.css">
   <style>
-    .hero { text-align: center; padding: 80px 20px 50px; }
-    .hero h1 { font-size: 2.4rem; margin-bottom: 16px; letter-spacing: 0.05em; }
-    .hero .sub { color: var(--muted); font-size: 1.1rem; margin-bottom: 12px; }
-    .hero .desc { color: var(--muted); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; font-size: 0.95rem; }
-    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 11px 26px; border-radius: 6px; text-decoration: none; font-weight: 500; }
-    .btn-primary { background: var(--gold, #c9a227); color: #111; }
-    .btn-secondary { border: 1px solid var(--border, #444); color: var(--text); }
+    .hero { text-align: center; padding: 70px 20px 40px; }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+    .hero .sub { color: var(--muted); font-size: 1.05rem; margin-bottom: 28px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; max-width: 720px; margin: 0 auto 36px; }
+    .stat { background: var(--card, #1a1a1a); border: 1px solid var(--border, #333); border-radius: 8px; padding: 14px; text-align: center; }
+    .stat .num { font-size: 1.35rem; font-weight: 600; color: var(--gold, #c9a227); }
+    .stat .label { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+    .card { background: var(--card, #1a1a1a); border: 1px solid var(--border, #333); border-radius: 10px; padding: 22px; margin: 0 auto 22px; max-width: 720px; }
+    .card h2 { font-size: 1.1rem; margin: 0 0 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th, td { border: 1px solid var(--border, #333); padding: 7px 10px; text-align: left; }
+    th { background: #111; }
+    .warn { max-width: 720px; margin: 0 auto 28px; background: #2a1a00; border-left: 3px solid var(--gold, #c9a227); padding: 12px 16px; font-size: 0.88rem; line-height: 1.5; }
+    pre { background: #111; padding: 14px; border-radius: 6px; overflow-x: auto; font-size: 0.8rem; line-height: 1.45; }
   </style>
 </head>
 <body>
 <nav class="site-nav">
   <a href="index.html" class="logo">姜氏宇宙</a>
   <div class="nav-links">
-    <a href="index.html" class="active">首页</a>
-    <a href="model.html">总览图</a>
-    <a href="docs.html">完整记录</a>
+    <a href="index.html" class="active">MVM v4.7</a>
   </div>
 </nav>
 
 <div class="hero">
-  <h1>姜氏宇宙模型</h1>
-  <div class="sub">聚集 · 释放 · 转化</div>
-  <p class="desc">
-    一个总质量永恒不变的宇宙，在三形态间循环。<br>
-    万物不一且守恒；观测永远是过去式。<br>
-    聚集就是奇点。黑洞是精炼炉。绝无第二宇宙。
-  </p>
-  <div class="btn-row">
-    <a class="btn btn-primary" href="model.html">查看总览图</a>
-    <a class="btn btn-secondary" href="docs.html">完整记录</a>
-  </div>
+  <h1>MVM v4.7</h1>
+  <div class="sub">Matter Nature Driven Universe Model · 三标量场暗能量</div>
 </div>
 
-<footer class="site-footer">姜氏宇宙模型 · 个人研究 · 非同行评审</footer>
+<div class="stats">
+  <div class="stat"><div class="num">67.4</div><div class="label">H₀ km/s/Mpc</div></div>
+  <div class="stat"><div class="num">13.81</div><div class="label">年龄 Gyr</div></div>
+  <div class="stat"><div class="num">≈ −0.999</div><div class="label">w_DE (z=0)</div></div>
+  <div class="stat"><div class="num">0.983</div><div class="label">min g_xx</div></div>
+</div>
+
+<div class="warn">
+  当前参考参数下，场几乎冻结，有效行为接近宇宙学常数。这是已验证的数值事实。模型框架仍开放，可继续探索更强动力学。
+</div>
+
+<div class="card">
+  <h2>参数</h2>
+  <table>
+    <tr><th>参数</th><th>值</th><th>含义</th></tr>
+    <tr><td>V0</td><td>2.058454</td><td>主场势能标度</td></tr>
+    <tr><td>λ_φ</td><td>0.08</td><td>主场指数衰减率</td></tr>
+    <tr><td>μ</td><td>0.40</td><td>χ 场质量</td></tr>
+    <tr><td>A_gold</td><td>0.45</td><td>动能耦合强度</td></tr>
+    <tr><td>g_scale</td><td>0.40</td><td>三场交叉耦合</td></tr>
+    <tr><td>λ_σ</td><td>0.15</td><td>σ 自耦合</td></tr>
+    <tr><td>v_vev</td><td>1.00</td><td>σ 真空期望值</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>主要结果</h2>
+  <table>
+    <tr><th>量</th><th>数值</th></tr>
+    <tr><td>Ω_DE (z=0)</td><td>≈ 0.687</td></tr>
+    <tr><td>Ω_DE (z=1100)</td><td>∼ 10⁻⁹</td></tr>
+    <tr><td>min g_xx</td><td>0.983 &gt; 0（无鬼）</td></tr>
+    <tr><td>质量矩阵最小本征值</td><td>0.013 &gt; 0（无快子）</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>作用量与势能</h2>
+  <pre>S = ∫ √−g [ R/2 − ½(∂φ)² − ½ e^{−A_gold φ}(∂χ)² − ½(∂σ)² − V ]
+
+V = V0 e^{−λ_φ φ} + ½ μ² χ² + ¼ λ_σ (σ² − v_vev²)² + ½ g_scale σ² φ² χ²</pre>
+</div>
+
+<div class="card">
+  <h2>说明</h2>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;margin:0">
+    个人研究，非同行评审。<br>
+    背景演化可复现。当前参数下场几乎不滚动，尚未实现明显的动力学暗能量偏离。<br>
+    代码与轨迹数据保存在本地 artifacts/MVM-v4.7/。
+  </p>
+</div>
+
+<footer class="site-footer">MVM v4.7 · 姜氏宇宙 · 2026-07-27 · 个人研究</footer>
 </body>
 </html>
